@@ -1,0 +1,38 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: "{{.Values.container.name.primary}}"
+  labels:
+    name: "{{.Values.container.name.primary}}"
+    heritage: {{.Release.Service | quote }}
+    release: {{.Release.Name | quote }}
+    chart: "{{.Chart.Name}}-{{.Chart.Version}}"
+spec:
+  restartPolicy: {{default "Never" .Values.restartPolicy}}
+  containers:
+  - name: {{.Values.container.name.primary}}
+    image: "{{.Values.image_primary.repository}}/{{.Values.image_primary.container}}:{{.Values.image_primary.tag}}"
+    ports:
+    - containerPort: {{.Values.container.port}}
+    resources:
+      requests:
+        cpu: {{ .Values.resources.cpu }}
+        memory: {{ .Values.resources.memory }}
+    readinessProbe:
+      exec:
+        command:
+        - /bin/sh
+        - -c
+        - |
+        - psql blacklisted -c "select table_schema,table_name from information_schema.tables where table_schema = 'public';"
+      initialDelaySeconds: 5
+      periodSeconds: 5
+    livenessProbe:
+      exec:
+        command:
+        - /bin/sh
+        - -c
+        - |
+        - psql -c 'select version()'
+      initialDelaySeconds: 5
+      periodSeconds: 5  
