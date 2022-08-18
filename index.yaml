@@ -3,11 +3,21 @@ entries:
   pg_replication:
   - apiVersion: v1
     appVersion: 0.0.1
-    created: "2022-08-18T17:33:34.4912223+03:00"
+    created: "2022-08-18T18:03:47.3210159+03:00"
     description: Deploy primary and replica cluster
-    digest: e5299f2452d3bbc3daace157a09e14a5aec2cb1620e2cd2d5df7b142a0210824
+    digest: 2e059cd0d9565b4ec7edbc9180d0f0c67f36e6cf986731cb5484b0e6c69f9a6b
     name: pg_replication
     urls:
-    - https://dennysim.github.io/helm_charts/pg_replication-0.0.1.tgz
+    - https://dennysim.github.io/helm-chart/pg_replication-0.0.1.tgz
     version: 0.0.1
-generated: "2022-08-18T17:33:34.4856119+03:00"
+  php-app:
+  - apiVersion: v1
+    appVersion: "1"
+    created: "2022-08-18T18:03:47.3282635+03:00"
+    description: php-app in kubernetes
+    digest: 3157aedcb0d314ac5b66aea20c40698ec90a4b5935992544f0a838676d1963c6
+    name: php-app
+    urls:
+    - https://dennysim.github.io/helm-chart/php-app-1.tgz
+    version: "1"
+generated: "2022-08-18T18:03:47.3147395+03:00"
