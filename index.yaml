@@ -1,0 +1,13 @@
+apiVersion: v1
+entries:
+  pg_replication:
+  - apiVersion: v1
+    appVersion: 0.0.1
+    created: "2022-08-18T17:03:37.4324036+03:00"
+    description: Deploy primary and replica cluster
+    digest: e5299f2452d3bbc3daace157a09e14a5aec2cb1620e2cd2d5df7b142a0210824
+    name: pg_replication
+    urls:
+    - https://github.com/DennySim/helm_charts.git/pg_replication-0.0.1.tgz
+    version: 0.0.1
+generated: "2022-08-18T17:03:37.4256349+03:00"
